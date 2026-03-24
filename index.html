@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Farm Fresh Nigeria - Your one-stop platform for farming tools and expert plant care guides in Abuja and across Nigeria">
+    <meta name="keywords"
+        content="farming tools Nigeria, agriculture Abuja, plant care, farmers Nigeria, farm equipment">
+    <title>Farm Fresh Nigeria - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Farm <span>Fresh Nigeria</span></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="guides.html">Plant Guides</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Farm Fresh Nigeria</h1>
+                <p>Supporting Nigerian farmers with easy tool access and expert plant care guides</p>
+                <div class="search-box">
+                    <label for="main-search" class="visually-hidden">Search for tools, seeds, guides</label>
+                    <input type="text" id="main-search" placeholder="Search for tractors, irrigation, seeds...">
+                    <button id="search-btn" aria-label="Search">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">How We Help Nigerian Farmers</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image"
+                            style="background-image: url('images/tool-rental.jpg');">
+                        </div>
+                        <div class="card-content">
+                            <h3>Tool Rental Directory</h3>
+                            <p>Find and rent farming equipment from trusted suppliers across Abuja, Kaduna, Kano, and
+                                all Nigerian states.</p>
+                            <a href="tools.html" class="btn">Browse Tools →</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"
+                            style="background-image: url('images/plant-care.jpg');">
+                        </div>
+                        <div class="card-content">
+                            <h3>Plant Care Guides</h3>
+                            <p>Step-by-step guides for growing Nigerian staples: Cassava, Yam, Maize, Rice, Tomatoes,
+                                and more.</p>
+                            <a href="guides.html" class="btn">View Guides →</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"
+                            style="background-image: url('images/community.jpg');">
+                        </div>
+                        <div class="card-content">
+                            <h3>Community Forum</h3>
+                            <p>Connect with farmers from Abuja, Lagos, and across Nigeria. Share experiences and get
+                                local advice.</p>
+                            <a href="forum.html" class="btn">Join Discussion →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Browse by Category</h2>
+                <div class="category-grid">
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='tools.html?category=tractors'">
+                        <i>🚜</i>
+                        <h3>Tractors</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='tools.html?category=irrigation'">
+                        <i>💧</i>
+                        <h3>Irrigation</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='tools.html?category=harvesting'">
+                        <i>🌾</i>
+                        <h3>Harvesting</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='guides.html?crop=cassava'">
+                        <i>🥔</i>
+                        <h3>Cassava</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='guides.html?crop=yam'">
+                        <i>🌱</i>
+                        <h3>Yam</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='guides.html?crop=maize'">
+                        <i>🌽</i>
+                        <h3>Maize</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='guides.html?crop=rice'">
+                        <i>🍚</i>
+                        <h3>Rice</h3>
+                    </div>
+                    <div class="category-item" role="link" tabindex="0"
+                        onclick="window.location.href='guides.html?crop=tomatoes'">
+                        <i>🍅</i>
+                        <h3>Tomatoes</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="weather-section">
+            <div class="container">
+                <div class="weather-widget" id="weather-widget">
+                    <h3>🌤️ Abuja Weather</h3>
+                    <div id="weather-info" aria-live="polite">Loading weather...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Farm Fresh Nigeria</h4>
+                    <p>Supporting small-scale farmers across Nigeria with tools and knowledge for better harvests.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tools.html">Tools Directory</a></li>
+                        <li><a href="guides.html">Plant Guides</a></li>
+                        <li><a href="forum.html">Farmer Forum</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 Abuja, Nigeria</li>
+                        <li>📞 +234 700 000 0000</li>
+                        <li>✉️ info@farmfresh.ng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

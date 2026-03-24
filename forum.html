@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Farmer community forum - share tips and ask questions">
+  <title>Farm Fresh - Community Forum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .forum-stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary-green);
+    }
+
+    .topic-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #e0f2e0;
+      color: var(--primary-green);
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Farm <span>Fresh</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="guides.html">Plant Guides</a></li>
+          <li><a href="forum.html" class="active">Forum</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="tools-header" style="background: linear-gradient(135deg, #795548, #5D4037)">
+      <div class="container">
+        <h1>Farmer's Forum</h1>
+        <p>Share experiences, ask questions, and learn from fellow farmers</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="forum-stats">
+        <div class="stat-card">
+          <div class="stat-number">1,247</div>
+          <div>Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3,892</div>
+          <div>Posts</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">156</div>
+          <div>Online Now</div>
+        </div>
+      </div>
+
+      <div class="new-post-form">
+        <h3>Start a Discussion</h3>
+        <form id="forum-post-form" onsubmit="event.preventDefault(); createNewPost();">
+          <div class="form-group">
+            <label for="post-title">Topic Title</label>
+            <input type="text" id="post-title" required placeholder="e.g., Best maize varieties for dry areas">
+          </div>
+          <div class="form-group">
+            <label for="post-category">Category</label>
+            <select id="post-category" required>
+              <option value="">Select category</option>
+              <option value="crops">Crops & Planting</option>
+              <option value="pests">Pest Control</option>
+              <option value="equipment">Farm Equipment</option>
+              <option value="market">Market Prices</option>
+              <option value="general">General Discussion</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="post-content">Your Question/Experience</label>
+            <textarea id="post-content" required
+              placeholder="Describe your question or share your experience..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="post-author">Your Name</label>
+            <input type="text" id="post-author" required placeholder="e.g., Farmer John">
+          </div>
+          <button type="submit" class="btn btn-orange">Post Discussion</button>
+        </form>
+      </div>
+
+      <div class="forum-container">
+        <div class="forum-posts" id="forum-posts">
+          <!-- Posts will be loaded here -->
+        </div>
+
+        <div class="forum-sidebar">
+          <div class="sidebar-widget">
+            <h3>Popular Topics</h3>
+            <div>
+              <span class="topic-tag">🌽 Maize Farming</span>
+              <span class="topic-tag">💧 Irrigation Tips</span>
+              <span class="topic-tag">🐛 Pest Control</span>
+              <span class="topic-tag">💰 Market Prices</span>
+              <span class="topic-tag">🚜 Tractor Hire</span>
+              <span class="topic-tag">🌱 Seed Varieties</span>
+              <span class="topic-tag">🧪 Fertilizer</span>
+              <span class="topic-tag">🌧️ Weather</span>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3>Forum Rules</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 10px;">✓ Be respectful to others</li>
+              <li style="margin-bottom: 10px;">✓ No spam or promotions</li>
+              <li style="margin-bottom: 10px;">✓ Stay on topic</li>
+              <li style="margin-bottom: 10px;">✓ Share accurate information</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Farm Fresh</h4>
+          <p>Supporting small-scale farmers with tools and knowledge for better harvests.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tools.html">Tools Directory</a></li>
+            <li><a href="guides.html">Plant Guides</a></li>
+            <li><a href="forum.html">Farmer Forum</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <ul>
+            <li>📍 Nairobi, Kenya</li>
+            <li>📞 +254 700 000000</li>
+            <li>✉️ info@farmfresh.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Farm Fresh. All rights reserved. Supporting Kenyan farmers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Forum functionality
+    let forumPosts = JSON.parse(localStorage.getItem('forumPosts')) || [
+      {
+        id: 1,
+        title: "Best time to plant maize in Kiambu?",
+        category: "crops",
+        content: "I'm planning to start maize farming on my 2-acre plot in Kiambu. When is the best planting time, and what varieties do well there?",
+        author: "James K.",
+        date: "2026-02-10",
+        comments: [
+          { author: "Mary W.", comment: "Plant with the long rains (March-April). DK 777 does well there.", date: "2026-02-11" }
+        ]
+      },
+      {
+        id: 2,
+        title: "Tomatoes have spots on leaves",
+        category: "pests",
+        content: "My tomato plants are developing dark spots on leaves. What could this be and how do I treat it?",
+        author: "Peter M.",
+        date: "2026-02-12",
+        comments: []
+      }
+    ];
+
+    function displayForumPosts() {
+      const container = document.getElementById('forum-posts');
+      if (!container) return;
+
+      container.innerHTML = forumPosts.map(post => `
+                <div class="post-card" data-id="${post.id}">
+                    <div class="post-header">
+                        <span class="post-author">👤 ${post.author}</span>
+                        <span class="post-date">${post.date}</span>
+                    </div>
+                    <span class="topic-tag">${post.category}</span>
+                    <h3 class="post-title">${post.title}</h3>
+                    <p>${post.content}</p>
+                    
+                    <div class="comment-section">
+                        <h4>Comments (${post.comments.length})</h4>
+                        ${post.comments.map(comment => `
+                            <div class="comment">
+                                <strong>${comment.author}</strong> - <small>${comment.date}</small>
+                                <p>${comment.comment}</p>
+                            </div>
+                        `).join('')}
+                        
+                        <form onsubmit="event.preventDefault(); addComment(${post.id})" style="margin-top: 15px;">
+                            <input type="text" id="comment-${post.id}" placeholder="Add a comment..." style="width: 70%; padding: 8px;">
+                            <button type="submit" class="btn" style="padding: 8px 15px;">Post</button>
+                        </form>
+                    </div>
+                </div>
+            `).join('');
+    }
+
+    function createNewPost() {
+      const title = document.getElementById('post-title').value;
+      const category = document.getElementById('post-category').value;
+      const content = document.getElementById('post-content').value;
+      const author = document.getElementById('post-author').value;
+
+      if (!title || !category || !content || !author) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const newPost = {
+        id: Date.now(),
+        title,
+        category,
+        content,
+        author,
+        date: new Date().toISOString().split('T')[0],
+        comments: []
+      };
+
+      forumPosts.unshift(newPost);
+      localStorage.setItem('forumPosts', JSON.stringify(forumPosts));
+
+      displayForumPosts();
+
+      // Reset form
+      document.getElementById('forum-post-form').reset();
+
+      showNotification('Your post has been added!');
+    }
+
+    function addComment(postId) {
+      const commentInput = document.getElementById(`comment-${postId}`);
+      const comment = commentInput.value;
+
+      if (!comment) return;
+
+      const post = forumPosts.find(p => p.id === postId);
+      if (post) {
+        post.comments.push({
+          author: "Guest User",
+          comment: comment,
+          date: new Date().toISOString().split('T')[0]
+        });
+
+        localStorage.setItem('forumPosts', JSON.stringify(forumPosts));
+        displayForumPosts();
+      }
+    }
+
+    // Initialize forum on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      displayForumPosts();
+    });
+  </script>
+</body>
+
+</html>

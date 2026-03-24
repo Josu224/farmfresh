@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Free farming resources, guides, and best practices for Nigerian farmers - Farm Fresh Nigeria">
+  <meta name="keywords" content="farming resources, soil health, pest management, sustainable farming, Nigeria">
+  <title>Farm Fresh Nigeria - Resources</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/resources.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Farm <span>Fresh Nigeria</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="guides.html">Plant Guides</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="resources.html" class="active" aria-current="page">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="tools-header" style="background: linear-gradient(135deg, #FF8F00, #F57C00)">
+      <div class="container">
+        <h1>Farming Resources</h1>
+        <p>Free guides, checklists, and tools to boost your farm productivity</p>
+        <div class="search-box" style="max-width: 500px; margin: 20px auto 0;">
+          <label for="resource-search" class="visually-hidden">Search resources</label>
+          <input type="text" id="resource-search" placeholder="Search resources...">
+          <button id="search-resources-btn" aria-label="Search">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-form">
+          <label for="category-filter" class="visually-hidden">Filter by category</label>
+          <select id="category-filter" title="Filter resources by category">
+            <option value="all">All Categories</option>
+            <option value="guides">Farming Guides</option>
+            <option value="soil">Soil Health</option>
+            <option value="pest">Pest Management</option>
+            <option value="sustainable">Sustainable Techniques</option>
+            <option value="market">Market Information</option>
+            <option value="govt">Government Programs</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="container">
+      <div id="resources-container" class="resources-grid">
+        <!-- Resources will be loaded dynamically -->
+      </div>
+    </section>
+
+    <!-- Featured Resources Banner -->
+    <section class="container">
+      <div class="featured-resources"
+        style="background: linear-gradient(135deg, var(--primary-green), var(--nigerian-green)); border-radius: 16px; padding: 40px; margin: 40px 0; color: white; text-align: center;">
+        <h3 style="color: white; margin-bottom: 10px;">📘 Free Resource Bundle</h3>
+        <p style="margin-bottom: 20px;">Get our complete Nigerian Farming Starter Kit – includes planting calendars,
+          pest control charts, and market price tracker.</p>
+        <button class="btn btn-orange" onclick="downloadBundle()">Download Bundle (PDF)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Farm Fresh Nigeria</h4>
+          <p>Supporting small-scale farmers across Nigeria with tools and knowledge for better harvests.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tools.html">Tools Directory</a></li>
+            <li><a href="guides.html">Plant Guides</a></li>
+            <li><a href="forum.html">Farmer Forum</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <ul>
+            <li>📍 Abuja, Nigeria</li>
+            <li>📞 +234 700 000 0000</li>
+            <li>✉️ info@farmfresh.ng</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/resources.js"></script>
+
+</body>
+
+</html>

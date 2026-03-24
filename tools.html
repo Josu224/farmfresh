@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and rent farming tools and equipment in Abuja and across Nigeria">
+  <title>Farm Fresh Nigeria - Tools Directory</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Farm <span>Fresh Nigeria</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tools.html" class="active" aria-current="page">Tools</a></li>
+          <li><a href="guides.html">Plant Guides</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- Cart and Account links will be added by main.js initCartIcon() -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="tools-header">
+      <div class="container">
+        <h1>Farming Tools Directory</h1>
+        <p>Find the right equipment for your farm in Abuja and across Nigeria</p>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-form">
+          <label for="tool-search" class="visually-hidden">Search tools</label>
+          <input type="text" id="tool-search" placeholder="Search tools...">
+
+          <label for="category-filter" class="visually-hidden">Filter by category</label>
+          <select id="category-filter" title="Filter tools by category">
+            <option value="all">All Categories</option>
+            <option value="tractors">Tractors</option>
+            <option value="irrigation">Irrigation</option>
+            <option value="planting">Planting Equipment</option>
+            <option value="harvesting">Harvesting</option>
+            <option value="sprayers">Sprayers</option>
+            <option value="processing">Processing Equipment</option>
+          </select>
+
+          <label for="location-filter" class="visually-hidden">Filter by location</label>
+          <select id="location-filter" title="Filter tools by Nigerian state">
+            <option value="all">All Locations</option>
+            <option value="Abuja">Abuja (FCT)</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Kaduna">Kaduna</option>
+            <option value="Kano">Kano</option>
+            <option value="Plateau">Plateau</option>
+            <option value="Benue">Benue</option>
+            <option value="Nasarawa">Nasarawa</option>
+            <option value="Niger">Niger State</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div id="tools-container" class="tools-grid">
+        <!-- Tools will be loaded here by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Farm Fresh Nigeria</h4>
+          <p>Supporting small-scale farmers across Nigeria with tools and knowledge for better harvests.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="tools.html">Tools Directory</a></li>
+            <li><a href="guides.html">Plant Guides</a></li>
+            <li><a href="forum.html">Farmer Forum</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <ul>
+            <li>📍 Abuja, Nigeria</li>
+            <li>📞 +234 700 000 0000</li>
+            <li>✉️ info@farmfresh.ng</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
+</body>
+
+</html>
