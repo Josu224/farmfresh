@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightActiveNav();
     initNewsletter();
     initBackToTop();
-    initCartIcon();      // NEW: cart icon in navigation
+    initCartIcon();      // Cart icon in navigation
     
 });
 
@@ -96,7 +96,7 @@ function toggleFavorite(btn, itemId) {
     localStorage.setItem('farmFreshNigeriaFavorites', JSON.stringify(favorites));
 }
 
-// ===== WEATHER WIDGET (unchanged) =====
+// ===== WEATHER WIDGET =====
 async function initWeather() {
     const weatherContainer = document.getElementById('weather-info');
     if (!weatherContainer) return;
@@ -218,61 +218,53 @@ function getNigerianCityFromCoords(lat, lon) {
     return Promise.resolve(closestCity);
 }
 
-// ===== MOBILE MENU (unchanged) =====
+// ===== MOBILE MENU (fixed: button on right) =====
 function initMobileMenu() {
-    const header = document.querySelector('header .container');
-    const nav = document.querySelector('nav ul');
-    
-    if (!header || !nav) return;
-    if (document.querySelector('.mobile-menu-btn')) return;
-    
+    const headerContainer = document.querySelector('header .container');
+    const nav = document.querySelector('nav');
+    const navUl = nav?.querySelector('ul');
+    if (!headerContainer || !nav || !navUl) return;
+
+    // Remove any existing menu button to avoid duplicates
+    const existingBtn = document.querySelector('.mobile-menu-btn');
+    if (existingBtn) existingBtn.remove();
+
+    // Create the button with custom hamburger icon
     const menuBtn = document.createElement('button');
     menuBtn.className = 'mobile-menu-btn';
-    menuBtn.innerHTML = '☰';
     menuBtn.setAttribute('aria-label', 'Toggle navigation menu');
-    menuBtn.style.cssText = `
-        display: none;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 0.5rem;
-    `;
-    
-    function checkMobile() {
-        if (window.innerWidth <= 768) {
-            if (!document.querySelector('.mobile-menu-btn')) {
-                header.appendChild(menuBtn);
-            }
-            menuBtn.style.display = 'block';
-            nav.style.display = 'none';
+    menuBtn.innerHTML = '<span class="hamburger-icon"></span>';
+    headerContainer.appendChild(menuBtn);
+
+    function toggleMenu(open) {
+        if (open === undefined) {
+            const isOpen = nav.classList.contains('active');
+            open = !isOpen;
+        }
+        if (open) {
+            nav.classList.add('active');
+            menuBtn.classList.add('active');
+            document.body.classList.add('menu-open');
         } else {
-            menuBtn.style.display = 'none';
-            nav.style.display = 'flex';
+            nav.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
     }
-    
-    menuBtn.addEventListener('click', () => {
-        if (nav.style.display === 'none' || window.getComputedStyle(nav).display === 'none') {
-            nav.style.display = 'flex';
-            nav.style.flexDirection = 'column';
-            nav.style.width = '100%';
-            nav.style.position = 'absolute';
-            nav.style.top = '80px';
-            nav.style.left = '0';
-            nav.style.backgroundColor = 'var(--primary-green)';
-            nav.style.padding = '1rem';
-            nav.style.zIndex = '100';
-            menuBtn.innerHTML = '✕';
-        } else {
-            nav.style.display = 'none';
-            menuBtn.innerHTML = '☰';
+
+    menuBtn.addEventListener('click', () => toggleMenu());
+
+    // Close menu when a link is clicked
+    navUl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // Close menu on window resize if screen becomes larger than mobile
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            toggleMenu(false);
         }
     });
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
 }
 
 // ===== HIGHLIGHT ACTIVE NAVIGATION =====
@@ -346,7 +338,7 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
-// ===== FORM VALIDATION (unchanged) =====
+// ===== FORM VALIDATION =====
 function validateForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return true;
