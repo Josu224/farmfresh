@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse and rent farming tools and equipment in Abuja and across Nigeria">
-  <title>Farm Fresh Nigeria - Tools Directory</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description"
+    content="Browse and rent farming tools and equipment in Abuja and across Nigeria – tractors, irrigation, harvesters, and more.">
+  <title>Farm Fresh Nigeria | Tools Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
@@ -22,57 +25,51 @@
           <li><a href="resources.html">Resources</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="about.html">About</a></li>
-          <!-- Cart and Account links will be added by main.js initCartIcon() -->
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="tools-header">
       <div class="container">
-        <h1>Farming Tools Directory</h1>
-        <p>Find the right equipment for your farm in Abuja and across Nigeria</p>
+        <h1>🚜 Farming Tools Directory</h1>
+        <p>Find and rent the right equipment for your farm in Abuja and across Nigeria</p>
       </div>
     </section>
 
+    <!-- Filters -->
     <section class="filter-section">
       <div class="container">
         <div class="filter-form">
           <label for="tool-search" class="visually-hidden">Search tools</label>
-          <input type="text" id="tool-search" placeholder="Search tools...">
+          <input type="text" id="tool-search" placeholder="Search tools by name, supplier, or location..."
+            aria-label="Search tools">
 
           <label for="category-filter" class="visually-hidden">Filter by category</label>
-          <select id="category-filter" title="Filter tools by category">
+          <select id="category-filter" aria-label="Filter by category">
             <option value="all">All Categories</option>
-            <option value="tractors">Tractors</option>
-            <option value="irrigation">Irrigation</option>
-            <option value="planting">Planting Equipment</option>
-            <option value="harvesting">Harvesting</option>
-            <option value="sprayers">Sprayers</option>
-            <option value="processing">Processing Equipment</option>
           </select>
 
           <label for="location-filter" class="visually-hidden">Filter by location</label>
-          <select id="location-filter" title="Filter tools by Nigerian state">
+          <select id="location-filter" aria-label="Filter by location">
             <option value="all">All Locations</option>
-            <option value="Abuja">Abuja (FCT)</option>
-            <option value="Lagos">Lagos</option>
-            <option value="Kaduna">Kaduna</option>
-            <option value="Kano">Kano</option>
-            <option value="Plateau">Plateau</option>
-            <option value="Benue">Benue</option>
-            <option value="Nasarawa">Nasarawa</option>
-            <option value="Niger">Niger State</option>
           </select>
         </div>
       </div>
     </section>
 
+    <!-- Tools Grid -->
     <section class="container">
-      <div id="tools-container" class="tools-grid">
-        <!-- Tools will be loaded here by JavaScript -->
+      <div id="tools-container" class="tools-grid" role="region" aria-label="Available farming tools">
+        <div class="loading">Loading tools...</div>
       </div>
+    </section>
+
+    <!-- Favorites Section (will be populated by JS) -->
+    <section class="container">
+      <div id="favorite-tools"></div>
     </section>
   </main>
 
@@ -102,7 +99,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Empowering Nigerian farmers.</p>
       </div>
     </div>
   </footer>

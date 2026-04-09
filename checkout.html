@@ -4,106 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Checkout - Farm Fresh Nigeria">
-  <title>Farm Fresh Nigeria - Checkout</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .checkout-container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    .checkout-form,
-    .order-summary {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--gray-700);
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary-green);
-      box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
-    }
-
-    .order-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .order-total {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-top: 20px;
-      text-align: right;
-      color: var(--accent-orange);
-      padding-top: 10px;
-      border-top: 2px solid var(--primary-green);
-    }
-
-    .place-order-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent-orange);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.3s;
-    }
-
-    .place-order-btn:hover {
-      background: #f57c00;
-    }
-
-    .empty-cart-message {
-      text-align: center;
-      padding: 40px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: var(--shadow-md);
-    }
-
-    @media (max-width: 768px) {
-      .checkout-container {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <meta name="description" content="Secure checkout – complete your tool rental order with Farm Fresh Nigeria">
+  <title>Farm Fresh Nigeria | Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -125,9 +28,19 @@
   </header>
 
   <main>
-    <div class="checkout-container" id="checkout-container">
-      <!-- Content will be populated by JavaScript -->
-    </div>
+    <section class="tools-header"
+      style="background: linear-gradient(135deg, var(--primary-green), var(--nigerian-green));">
+      <div class="container">
+        <h1>💳 Secure Checkout</h1>
+        <p>Complete your order – fast and reliable delivery across Nigeria</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="checkout-container" id="checkout-container">
+        <div class="loading">Loading checkout...</div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -150,173 +63,19 @@
           <h4>Contact Info</h4>
           <ul>
             <li>📍 Abuja, Nigeria</li>
-            <li>📞 +234 700 000 0000</li>
+            <li>📞 +234 803 000 0000</li>
             <li>✉️ info@farmfresh.ng</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Empowering Nigerian farmers.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    function renderCheckout() {
-      const cart = getCart();
-      const container = document.getElementById('checkout-container');
-      if (!cart.length) {
-        container.innerHTML = `
-                    <div class="empty-cart-message" style="grid-column: span 2;">
-                        <h2>Your cart is empty</h2>
-                        <p>Browse our <a href="tools.html">products</a> to add items to your cart.</p>
-                    </div>
-                `;
-        return;
-      }
-
-      // Build order summary HTML
-      let orderItemsHtml = '';
-      cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        orderItemsHtml += `
-                    <div class="order-item">
-                        <span>${item.name} x ${item.quantity}</span>
-                        <span>₦${itemTotal.toLocaleString()}</span>
-                    </div>
-                `;
-      });
-      const total = getCartTotal();
-
-      // Build checkout page with form and summary
-      container.innerHTML = `
-                <div class="checkout-form">
-                    <h2>Delivery Details</h2>
-                    <form id="checkout-form">
-                        <div class="form-group">
-                            <label for="fullname">Full Name *</label>
-                            <input type="text" id="fullname" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Delivery Address *</label>
-                            <textarea id="address" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="city">City/State *</label>
-                            <input type="text" id="city" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="payment">Payment Method *</label>
-                            <select id="payment" required>
-                                <option value="">Select</option>
-                                <option value="card">Card (Paystack)</option>
-                                <option value="bank">Bank Transfer</option>
-                                <option value="cash">Cash on Delivery</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="place-order-btn">Place Order</button>
-                    </form>
-                </div>
-                <div class="order-summary">
-                    <h2>Order Summary</h2>
-                    ${orderItemsHtml}
-                    <div class="order-total">Total: ₦${total.toLocaleString()}</div>
-                </div>
-            `;
-
-      // Attach form submit handler
-      const form = document.getElementById('checkout-form');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        placeOrder();
-      });
-    }
-
-    function placeOrder() {
-      // Get form values
-      const fullname = document.getElementById('fullname').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const address = document.getElementById('address').value.trim();
-      const city = document.getElementById('city').value.trim();
-      const payment = document.getElementById('payment').value;
-
-      // Basic validation
-      if (!fullname || !email || !phone || !address || !city || !payment) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-
-      // Nigerian phone number validation (simple)
-      const phoneRegex = /^(0|234|\+234)[0-9]{10}$/;
-      if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
-        alert('Please enter a valid Nigerian phone number (e.g., 08031234567 or +2348031234567).');
-        return;
-      }
-
-      const cart = getCart();
-      if (!cart.length) {
-        alert('Your cart is empty. Add items before checking out.');
-        return;
-      }
-
-      // Create order object
-      const order = {
-        id: Date.now(),
-        date: new Date().toLocaleString(),
-        items: cart.map(item => ({
-          id: item.id,
-          name: item.name,
-          price: item.price,
-          quantity: item.quantity,
-          priceUnit: item.priceUnit || '',
-          image: item.image
-        })),
-        total: getCartTotal(),
-        customer: {
-          fullname,
-          email,
-          phone,
-          address,
-          city,
-          payment
-        },
-        status: 'pending'
-      };
-
-      // Save order to localStorage
-      let orders = JSON.parse(localStorage.getItem('farmFreshOrders')) || [];
-      orders.unshift(order);
-      localStorage.setItem('farmFreshOrders', JSON.stringify(orders));
-
-      // Clear cart
-      localStorage.removeItem('farmFreshCart');
-      updateCartIcon(); // update cart count
-
-      // Show success message and redirect to account page
-      alert('Order placed successfully! You will receive a confirmation email shortly.');
-      window.location.href = 'account.html';
-    }
-
-    // Render checkout on page load
-    document.addEventListener('DOMContentLoaded', renderCheckout);
-  </script>
+  <script src="js/checkout.js"></script>
 </body>
 
 </html>

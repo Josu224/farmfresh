@@ -5,10 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Free farming resources, guides, and best practices for Nigerian farmers - Farm Fresh Nigeria">
-  <meta name="keywords" content="farming resources, soil health, pest management, sustainable farming, Nigeria">
-  <title>Farm Fresh Nigeria - Resources</title>
-  <link rel="stylesheet" href="css/styles.css">
+    content="Free farming resources, guides, and best practices for Nigerian farmers – soil health, pest management, sustainable techniques, and more.">
+  <meta name="keywords"
+    content="farming resources Nigeria, soil health, pest management, sustainable farming, cassava guide, maize manual">
+  <title>Farm Fresh Nigeria | Resources</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- jsPDF library for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -30,25 +33,24 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="tools-header" style="background: linear-gradient(135deg, #FF8F00, #F57C00)">
-      <div class="container">
-        <h1>Farming Resources</h1>
-        <p>Free guides, checklists, and tools to boost your farm productivity</p>
-        <div class="search-box" style="max-width: 500px; margin: 20px auto 0;">
-          <label for="resource-search" class="visually-hidden">Search resources</label>
-          <input type="text" id="resource-search" placeholder="Search resources...">
-          <button id="search-resources-btn" aria-label="Search">Search</button>
-        </div>
+  <!-- Hero Section -->
+  <section class="resources-header">
+    <div class="container">
+      <h1>📚 Farming Resources</h1>
+      <p>Free guides, checklists, and tools to boost your farm productivity</p>
+      <div class="search-box" style="max-width: 500px; margin: 20px auto 0;">
+        <label for="resource-search" class="visually-hidden">Search resources</label>
+        <input type="text" id="resource-search" placeholder="Search resources...">
+        <button id="search-resources-btn" aria-label="Search">Search</button>
       </div>
-    </section>
-
+    </div>
+  </section>
     <!-- Filter Bar -->
     <section class="filter-section">
       <div class="container">
         <div class="filter-form">
           <label for="category-filter" class="visually-hidden">Filter by category</label>
-          <select id="category-filter" title="Filter resources by category">
+          <select id="category-filter" aria-label="Filter by category">
             <option value="all">All Categories</option>
             <option value="guides">Farming Guides</option>
             <option value="soil">Soil Health</option>
@@ -64,18 +66,17 @@
     <!-- Resources Grid -->
     <section class="container">
       <div id="resources-container" class="resources-grid">
-        <!-- Resources will be loaded dynamically -->
+        <div class="loading">Loading resources...</div>
       </div>
     </section>
 
-    <!-- Featured Resources Banner -->
+    <!-- Featured Bundle Banner -->
     <section class="container">
-      <div class="featured-resources"
-        style="background: linear-gradient(135deg, var(--primary-green), var(--nigerian-green)); border-radius: 16px; padding: 40px; margin: 40px 0; color: white; text-align: center;">
-        <h3 style="color: white; margin-bottom: 10px;">📘 Free Resource Bundle</h3>
-        <p style="margin-bottom: 20px;">Get our complete Nigerian Farming Starter Kit – includes planting calendars,
-          pest control charts, and market price tracker.</p>
-        <button class="btn btn-orange" onclick="downloadBundle()">Download Bundle (PDF)</button>
+      <div class="featured-bundle">
+        <h3>📘 Free Resource Bundle</h3>
+        <p>Get our complete Nigerian Farming Starter Kit – includes planting calendars, pest control charts, and market
+          price tracker.</p>
+        <button id="download-bundle-btn" class="btn btn-orange">Download Bundle (PDF)</button>
       </div>
     </section>
   </main>
@@ -106,7 +107,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Empowering Nigerian farmers.</p>
       </div>
     </div>
   </footer>

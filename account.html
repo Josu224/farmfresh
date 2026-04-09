@@ -4,156 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="My Account - Farm Fresh Nigeria">
-  <title>Farm Fresh Nigeria - My Account</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .account-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .profile-card {
-      background: white;
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 30px;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .profile-info h2 {
-      margin-bottom: 8px;
-      color: var(--primary-green);
-    }
-
-    .profile-info p {
-      color: var(--gray-600);
-      margin: 5px 0;
-    }
-
-    .logout-btn {
-      background: #f44336;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .logout-btn:hover {
-      background: #d32f2f;
-    }
-
-    .order-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-md);
-      transition: transform 0.2s;
-    }
-
-    .order-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .order-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-    }
-
-    .order-id {
-      font-weight: bold;
-      color: var(--primary-green);
-      font-size: 1.1rem;
-    }
-
-    .order-date {
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    .order-status {
-      background: var(--accent-orange);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .order-items {
-      margin-bottom: 15px;
-    }
-
-    .order-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px dashed #eee;
-    }
-
-    .order-item:last-child {
-      border-bottom: none;
-    }
-
-    .order-total {
-      text-align: right;
-      font-weight: bold;
-      color: var(--accent-orange);
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #eee;
-      font-size: 1.1rem;
-    }
-
-    .delivery-info {
-      background: #f9f9f9;
-      padding: 12px;
-      border-radius: 8px;
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .empty-orders {
-      text-align: center;
-      padding: 60px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .empty-orders a {
-      color: var(--accent-orange);
-      text-decoration: none;
-    }
-
-    .empty-orders a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .profile-card {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  <meta name="description" content="My Account – Manage your profile, orders, and saved tools with Farm Fresh Nigeria">
+  <title>Farm Fresh Nigeria | My Account</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -176,9 +29,19 @@
   </header>
 
   <main>
-    <div class="account-container" id="account-container">
-      <!-- Content populated by JavaScript -->
-    </div>
+    <section class="tools-header"
+      style="background: linear-gradient(135deg, var(--primary-green), var(--nigerian-green));">
+      <div class="container">
+        <h1>👤 My Account</h1>
+        <p>Manage your profile, orders, and saved tools</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="account-container" id="account-container">
+        <div class="loading">Loading your account...</div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -201,122 +64,19 @@
           <h4>Contact Info</h4>
           <ul>
             <li>📍 Abuja, Nigeria</li>
-            <li>📞 +234 700 000 0000</li>
+            <li>📞 +234 803 000 0000</li>
             <li>✉️ info@farmfresh.ng</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Empowering Nigerian farmers.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Get user data (from last order or from localStorage)
-    function getUserProfile() {
-      const orders = JSON.parse(localStorage.getItem('farmFreshOrders')) || [];
-      if (orders.length > 0) {
-        const lastOrder = orders[0];
-        return {
-          name: lastOrder.customer.fullname,
-          email: lastOrder.customer.email,
-          phone: lastOrder.customer.phone,
-          address: lastOrder.customer.address,
-          city: lastOrder.customer.city
-        };
-      }
-      return null;
-    }
-
-    // Display account page
-    function renderAccount() {
-      const container = document.getElementById('account-container');
-      const user = getUserProfile();
-      const orders = JSON.parse(localStorage.getItem('farmFreshOrders')) || [];
-
-      // Profile section
-      let profileHtml = `
-                <div class="profile-card">
-                    <div class="profile-info">
-                        <h2>Welcome, ${user ? user.name : 'Farmer'}!</h2>
-                        ${user ? `
-                            <p>📧 ${user.email}</p>
-                            <p>📞 ${user.phone}</p>
-                            <p>📍 ${user.address}, ${user.city}</p>
-                        ` : '<p>No previous orders yet. <a href="tools.html">Start shopping</a> to see your profile.</p>'}
-                    </div>
-                    <button class="logout-btn" onclick="logout()">Logout</button>
-                </div>
-            `;
-
-      // Orders section
-      let ordersHtml = '<h2>Order History</h2>';
-      if (orders.length === 0) {
-        ordersHtml += `
-                    <div class="empty-orders">
-                        <h3>No orders yet</h3>
-                        <p>Your order history will appear here after you make your first purchase.</p>
-                        <a href="tools.html">Browse Products</a>
-                    </div>
-                `;
-      } else {
-        orders.forEach(order => {
-          let itemsHtml = '';
-          order.items.forEach(item => {
-            itemsHtml += `
-                            <div class="order-item">
-                                <span>${item.name} x ${item.quantity}</span>
-                                <span>₦${(item.price * item.quantity).toLocaleString()}</span>
-                            </div>
-                        `;
-          });
-          ordersHtml += `
-                        <div class="order-card">
-                            <div class="order-header">
-                                <div>
-                                    <span class="order-id">Order #${order.id}</span>
-                                    <span class="order-date"> | ${order.date}</span>
-                                </div>
-                                <span class="order-status">${order.status === 'pending' ? 'Pending' : 'Completed'}</span>
-                            </div>
-                            <div class="order-items">
-                                ${itemsHtml}
-                            </div>
-                            <div class="order-total">
-                                Total: ₦${order.total.toLocaleString()}
-                            </div>
-                            <div class="delivery-info">
-                                <strong>Delivery to:</strong> ${order.customer.address}, ${order.customer.city}<br>
-                                <strong>Payment:</strong> ${order.customer.payment === 'card' ? 'Card (Paystack)' : order.customer.payment === 'bank' ? 'Bank Transfer' : 'Cash on Delivery'}
-                            </div>
-                        </div>
-                    `;
-        });
-      }
-
-      container.innerHTML = profileHtml + ordersHtml;
-    }
-
-    // Logout function (clear all user data)
-    function logout() {
-      if (confirm('Are you sure you want to logout? This will clear your order history and cart from this device.')) {
-        localStorage.removeItem('farmFreshCart');
-        localStorage.removeItem('farmFreshOrders');
-        localStorage.removeItem('farmFreshNigeriaFavorites');
-        // Optionally clear newsletter subscription
-        // localStorage.removeItem('farmFreshNewsletter');
-        showNotification('Logged out successfully. Your data has been cleared.', 'info');
-        setTimeout(() => {
-          window.location.href = 'index.html';
-        }, 1500);
-      }
-    }
-
-    // Render page when loaded
-    document.addEventListener('DOMContentLoaded', renderAccount);
-  </script>
+  <script src="js/account.js"></script>
 </body>
 
 </html>

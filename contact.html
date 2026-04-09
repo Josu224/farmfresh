@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Farm Fresh Nigeria in Abuja for inquiries and support">
-  <title>Farm Fresh Nigeria - Contact Us</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description"
+    content="Contact Farm Fresh Nigeria in Abuja – we're here to support Nigerian farmers with tools, guides, and resources.">
+  <meta name="keywords" content="contact Farm Fresh Nigeria, Abuja agriculture support, farmer helpline Nigeria">
+  <title>Farm Fresh Nigeria | Contact Us</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -28,15 +30,18 @@
   </header>
 
   <main>
-    <section class="tools-header" style="background: linear-gradient(135deg, #2196F3, #1976D2)">
-      <div class="container">
-        <h1>Contact Us</h1>
-        <p>We're here to help Nigerian farmers succeed</p>
-      </div>
-    </section>
+<!-- Hero Section -->
+<section class="contact-header">
+  <div class="container">
+    <h1>📞 Contact Us</h1>
+    <p>We're here to help Nigerian farmers succeed</p>
+  </div>
+</section>
 
+    <!-- Contact Info & Form -->
     <section class="container">
       <div class="contact-container">
+        <!-- Contact Information -->
         <div class="contact-info">
           <h3>Get in Touch</h3>
 
@@ -55,8 +60,8 @@
             <i>📞</i>
             <div>
               <strong>Call Us</strong><br>
-              +234 803 000 0000<br>
-              +234 802 222 3333<br>
+              <a href="tel:+2348030000000">+234 803 000 0000</a><br>
+              <a href="tel:+2348022223333">+234 802 222 3333</a><br>
               <small>(Monday - Friday, 8am - 5pm)</small>
             </div>
           </div>
@@ -65,8 +70,8 @@
             <i>✉️</i>
             <div>
               <strong>Email Us</strong><br>
-              info@farmfresh.ng<br>
-              support@farmfresh.ng
+              <a href="mailto:info@farmfresh.ng">info@farmfresh.ng</a><br>
+              <a href="mailto:support@farmfresh.ng">support@farmfresh.ng</a>
             </div>
           </div>
 
@@ -81,27 +86,28 @@
           </div>
         </div>
 
+        <!-- Contact Form -->
         <div class="contact-form">
           <h3>Send a Message</h3>
-          <form id="contactForm" onsubmit="event.preventDefault(); submitContactForm();">
+          <form id="contact-form">
             <div class="form-group">
-              <label for="name">Your Full Name *</label>
-              <input type="text" id="name" required>
+              <label for="contact-name">Your Full Name *</label>
+              <input type="text" id="contact-name" name="name" required>
             </div>
 
             <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" required>
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" name="email" required>
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone Number (Nigeria)</label>
-              <input type="tel" id="phone" placeholder="e.g., 0803 123 4567">
+              <label for="contact-phone">Phone Number (Nigeria)</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="e.g., 0803 123 4567">
             </div>
 
             <div class="form-group">
-              <label for="subject">Subject *</label>
-              <select id="subject" required>
+              <label for="contact-subject">Subject *</label>
+              <select id="contact-subject" name="subject" required>
                 <option value="">Select a subject</option>
                 <option value="tool">Tool Rental Inquiry</option>
                 <option value="guide">Plant Guide Question</option>
@@ -112,8 +118,9 @@
             </div>
 
             <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" rows="5" required placeholder="How can we help you?"></textarea>
+              <label for="contact-message">Message *</label>
+              <textarea id="contact-message" name="message" rows="5" required
+                placeholder="How can we help you?"></textarea>
             </div>
 
             <button type="submit" class="btn btn-orange">Send Message</button>
@@ -122,15 +129,19 @@
       </div>
     </section>
 
+    <!-- Map Section -->
     <section class="container">
-      <div class="map-section" style="margin: 50px 0;">
+      <div class="map-section">
         <h3 class="section-title">Find Us in Abuja</h3>
-        <div style="background: #eee; height: 400px; border-radius: 12px; overflow: hidden;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252234.0700181225!2d7.39888945!3d9.0573945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b5b7c3b4b5f%3A0x9b7b3c9a8b4c5d6e!2sAbuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        <div class="map-container">
+          <!-- Static map representation (Google Maps embed with a generic Abuja location) -->
+          <iframe title="Farm Fresh Nigeria location in Abuja"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31515.90964883685!2d7.489202!3d9.05785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b5b7c3b4b5f%3A0x9b7b3c9a8b4c5d6e!2sCentral%20Business%20District%2C%20Abuja!5e0!3m2!1sen!2sng!4v1713000000000!5m2!1sen!2sng"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
+        <p class="map-note">📍 Central Business District, Abuja – opposite the Federal Secretariat.</p>
       </div>
     </section>
   </main>
@@ -155,41 +166,117 @@
           <h4>Contact Info</h4>
           <ul>
             <li>📍 Abuja, Nigeria</li>
-            <li>📞 +234 700 000 0000</li>
+            <li>📞 +234 803 000 0000</li>
             <li>✉️ info@farmfresh.ng</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Empowering Nigerian farmers.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
-    function submitContactForm() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
+    (function () {
+      'use strict';
 
-      if (!name || !email || !subject || !message) {
-        alert('Please fill in all required fields');
-        return;
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const phone = document.getElementById('contact-phone').value.trim();
+        const subject = document.getElementById('contact-subject').value;
+        const message = document.getElementById('contact-message').value.trim();
+
+        // Validation
+        if (!name || !email || !subject || !message) {
+          showToast('Please fill in all required fields.', 'error');
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showToast('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        // Optional Nigerian phone validation (if provided)
+        if (phone) {
+          const phoneRegex = /^(\+?234|0)[0-9]{10}$/;
+          const cleanedPhone = phone.replace(/\s+/g, '');
+          if (!phoneRegex.test(cleanedPhone)) {
+            showToast('Please enter a valid Nigerian phone number (e.g., 08031234567).', 'error');
+            return;
+          }
+        }
+
+        // Store contact in localStorage for demo (or could send to server)
+        const contactMessages = JSON.parse(localStorage.getItem('farmFreshContacts')) || [];
+        contactMessages.push({
+          name,
+          email,
+          phone,
+          subject,
+          message,
+          date: new Date().toISOString()
+        });
+        localStorage.setItem('farmFreshContacts', JSON.stringify(contactMessages));
+
+        // Show success message
+        showToast(`Thank you ${name}! Your message has been sent. We'll respond within 24 hours.`, 'success');
+
+        // Reset form
+        form.reset();
+      });
+
+      // Helper function to use main.js toast if available
+      function showToast(message, type = 'info') {
+        if (typeof window.showToast === 'function') {
+          window.showToast(message, type);
+        } else {
+          alert(message);
+        }
       }
-
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-      }
-
-      alert(`Thank you ${name}! Your message has been sent. We'll respond within 24 hours.`);
-      document.getElementById('contactForm').reset();
-    }
+    })();
   </script>
+
+  <!-- Additional inline style for map (will be moved to main CSS if needed) -->
+  <style>
+    .map-section {
+      margin: var(--space-xl) 0;
+    }
+
+    .map-container {
+      background: var(--gray-200);
+      height: 400px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .map-note {
+      text-align: center;
+      margin-top: var(--space-sm);
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+
+    .contact-detail a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </body>
 
 </html>

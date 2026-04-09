@@ -5,9 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Expert plant care guides for Nigerian farmers - Cassava, Yam, Maize, Rice, and more">
-  <title>Farm Fresh Nigeria - Plant Care Guides</title>
-  <link rel="stylesheet" href="css/styles.css">
+    content="Expert plant care guides for Nigerian farmers – Cassava, Yam, Maize, Rice, Tomatoes, Beans, Groundnuts, and Okra. Step-by-step instructions for better harvests.">
+  <title>Farm Fresh Nigeria | Plant Care Guides</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Preconnect for faster font loading (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
@@ -29,20 +32,24 @@
   </header>
 
   <main>
-    <section class="tools-header" style="background: linear-gradient(135deg, #FF8F00, #F57C00)">
-      <div class="container">
-        <h1>Plant Care Guides</h1>
-        <p>Step-by-step instructions for growing Nigerian crops</p>
-        <div class="search-box" style="max-width: 500px; margin: 20px auto 0;">
-          <label for="guide-search" class="visually-hidden">Search guides</label>
-          <input type="text" id="guide-search" placeholder="Search for cassava, yam, maize...">
-        </div>
-      </div>
-    </section>
+<!-- Hero Section -->
+<section class="guides-header">
+  <div class="container">
+    <h1>🌱 Plant Care Guides</h1>
+    <p>Step-by-step growing instructions for Nigeria's staple crops</p>
+    <div class="search-box" style="max-width: 500px; margin: 20px auto 0;">
+      <label for="guide-search" class="visually-hidden">Search crop guides</label>
+      <input type="text" id="guide-search" placeholder="Search for cassava, yam, maize..."
+        aria-label="Search plant guides">
+    </div>
+  </div>
+</section>
 
-    <section class="container">
-      <div id="guides-container" class="guides-list">
-        <!-- Guides will be loaded here by JavaScript -->
+    <!-- Guides Container -->
+    <section class="container" style="padding: var(--space-xl) 0;">
+      <div id="guides-container" class="guides-list" role="region" aria-label="Plant growing guides">
+        <!-- Guides will be dynamically inserted by JavaScript -->
+        <div class="loading">Loading growing guides...</div>
       </div>
     </section>
   </main>
@@ -73,13 +80,14 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Supporting Nigerian farmers.</p>
+        <p>&copy; 2026 Farm Fresh Nigeria. All rights reserved. Empowering Nigerian farmers.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/guides.js"></script>
 </body>
-
+  
 </html>
